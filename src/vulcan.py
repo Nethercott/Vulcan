@@ -24,6 +24,8 @@ def rangeCheck(old_number, offset, new_number): # Thanks @Eladkay, for this
 Get the last temperatures posting, compare to the current temperatures. If they exceed offsets, send an update to the google sheet
 """
 def main():
+    row_count = sheet.row_count
+
 
 
 
