@@ -10,3 +10,6 @@ classes/
 
 # Node.js packages
 node_modules/
+
+# Secret Files
+src/client_secret.json
