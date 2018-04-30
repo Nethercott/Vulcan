@@ -1,6 +1,5 @@
 # ds18b20.py
 # written by Roger Woollett
-
 import os
 import glob
 import time
