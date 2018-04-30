@@ -7,10 +7,12 @@ scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/aut
 creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 client = gspread.authorize(creds)
 sheet = client.open("Vulcan").sheet1
-row_count = sheet.row_count
 # DS18B20
 probes = DS18B20()
 probe_count = probes.device_count()
+
+# Constants
+global_offset = 2 # 2 Degree change, then we push changes.
 
 """
 So the old temperature is 18C and the new temperature is 21C, offset is 2, this would return true, and so should now post into the Google Sheet.
