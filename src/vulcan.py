@@ -25,6 +25,12 @@ Get the last temperatures posting, compare to the current temperatures. If they 
 def main():
     sheet = client.open("Vulcan").sheet1
     row_count = sheet.row_count
-
+    old_probe_1 = sheet.row_values(row_count)[1]
+    old_probe_2 = sheet.row_values(row_count)[2]
+    new_probe_1 = 5 #probes.tempC(0)
+    new_probe_2 = 15 #probes.tempC(1)
+    if rangeCheck(old_probe_1, global_offset, new_probe_1) or rangeCheck(old_probe_2, global_offset, new_probe_2):
+        # Initate push to spreadsheet
+        print("O1:{} O2:{} P1:{} P2:{}".format(old_probe_1, old_probe_2, new_probe_1, new_probe_2))
 if __name__ == '__main__':
     main()
